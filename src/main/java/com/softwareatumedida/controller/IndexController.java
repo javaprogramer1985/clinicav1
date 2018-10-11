@@ -10,6 +10,9 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.primefaces.context.RequestContext;
 
 @Named
 @ViewScoped//Quizas  se hagan actualizaciones usando Ajax y no de tipo Request
@@ -43,14 +46,17 @@ public class IndexController implements Serializable{
             if (us!=null){
                 
                 //Almacenar session de JSF
-                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("SessionUsuario", us);
-                
-                redireccion="/protegido/principal?faces-redirect=true";
+                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("SessionUsuario", us);                
+                redireccion="/dashboard/principal?faces-redirect=true";
+            
             }else{
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Verificar datos", "El Nombre de usuario o contraseña son incorrectos"));
+                //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"El Nombre de usuario o contraseña son incorrectos", ""));
+                toast("El Nombre de usuario o contraseña son incorrectos");
+                message(FacesMessage.SEVERITY_ERROR,"El Nombre de usuario o contraseña son incorrectos");
             }            
-        } catch (Exception e) {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL,"Aviso","Ocurrio un error al tratar de iniciar sesion"));
+        } catch (Exception e) {            
+            toast("El Nombre de usuario o contraseña son incorrectos");
+            message(FacesMessage.SEVERITY_ERROR,"Ocurrio un error al tratar de iniciar sesion");
         }
         
         return redireccion;
@@ -65,4 +71,11 @@ public class IndexController implements Serializable{
         this.usuario = usuario;
     }
     
+    private void toast(String message) {
+        RequestContext.getCurrentInstance().execute("Materialize.toast('" + message +"',4000);");
+    }
+    
+    private void message(FacesMessage.Severity SEVERITY, String message) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(SEVERITY, message, message));
+    }
 }

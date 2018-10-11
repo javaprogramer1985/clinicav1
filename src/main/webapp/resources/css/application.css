@@ -7349,7 +7349,7 @@ input.mdl-button[type="submit"] {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   border-right: 1px solid rgb(224,224,224);
-  background: #202020;
+  background: rgb(36, 36, 36);
   transform: translateX(-246px);
   transform-style: preserve-3d;
   will-change: transform;
@@ -7445,7 +7445,7 @@ input.mdl-button[type="submit"] {
   margin: 0;
   padding: 0;
   border: none;
-  min-height: 64px;
+  min-height: 64px; 
   max-height: 1000px;
   z-index: 3;
   background-color: #242424;
@@ -11036,7 +11036,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       margin-left: 91.66667%; } }
 
 .mdl-layout {
-  background: #202020; }
+  background: rgb(0, 188, 212); }
 
 main {
   /*background: url("#{resource['images:Dark_background_1920x1080.png']}") center top no-repeat;*/
@@ -11050,12 +11050,12 @@ main {
   border: none; }
   .mdl-layout__drawer header {
     text-align: center;
-    text-transform: uppercase;
+    text-transform: none;
     color: rgb(255, 255, 255);
     height: 64px;
     line-height: 64px;
     background: rgba(0, 0, 0,0.85);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: 1px; }
   .mdl-layout__drawer .mdl-navigation {
@@ -11849,7 +11849,7 @@ a {
 
 .form .mdl-cell {
   margin: 0;
-  padding-right: 30px; }
+  padding-right: 0px; }
   .form .mdl-cell.mdl-textfield.is-focused .mdl-textfield__label:after {
     width: calc(100% - 30px); }
   .form .mdl-cell:last-of-type {
