@@ -30,10 +30,14 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
               type='text/css' />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
+        
+        <!-- Font Awesome CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+        
         <h:outputStylesheet library="css" name="lib/getmdl-select.min.css" />
         <h:outputStylesheet library="css" name="lib/nv.d3.css" />
         <h:outputStylesheet library="css" name="application.css" />
+        <f:event type="preRenderView" listener="#{plantillaPrincipalController.verificarSesion()}"/>        
     </h:head>
 
     <h:body class="mdl-color--blue-grey-50">
@@ -58,17 +62,17 @@
                         </div>
 
                         <div class="avatar-dropdown" id="icon">
-                            <span>Herrera</span>
-                            <img src="https://lh3.googleusercontent.com/-kiCkCsVNH9E/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbAfg84iuoDncDnV5Sw2oe0GLBHq8A/s96-c-mo/photo.jpg" class="responsive-img" />
+                            <span>#{plantillaPrincipalController.usuario.usuarioUsr}</span>
+                            <img src="https://lh3.googleusercontent.com/-kiCkCsVNH9E/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbAfg84iuoDncDnV5Sw2oe0GLBHq8A/s96-c-mo/photo.jpg" class="roundavatar" />
                         </div>
                         <!-- Informacion de la cuenta menu desplegable-->
                         <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
                             for="icon">
                             <li class="mdl-list__item mdl-list__item--two-line">
                                 <span class="mdl-list__item-primary-content">
-                                    <span class="material-icons mdl-list__item-avatar"></span>
-                                    <span>#{home.user.firstName}</span>
-                                    <span class="mdl-list__item-sub-title">#{home.user.email}</span>
+                                    <img src="https://lh3.googleusercontent.com/-kiCkCsVNH9E/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbAfg84iuoDncDnV5Sw2oe0GLBHq8A/s96-c-mo/photo.jpg" class="material-icons mdl-list__item-avatar roundavatar" />
+                                    <span>#{plantillaPrincipalController.nombre}</span>
+                                    <span class="mdl-list__item-sub-title">#{plantillaPrincipalController.usuario.usuarioUsr}</span>
                                 </span>
                             </li>
                             <li class="list__item--border-top"></li>
@@ -84,7 +88,7 @@
                                     Mis pendientes
                                 </span>
                                 <span class="mdl-list__item-secondary-content">
-                                    <span class="label background-color--primary">3 new</span>
+                                    <span class="label background-color--primary">3 Nuevos</span>
                                 </span>
                             </li>
                             <li class="mdl-menu__item mdl-list__item">
@@ -119,24 +123,29 @@
                             <i class="material-icons" role="presentation">dashboard</i>
                             Principal
                         </a>
-                        <a class="mdl-navigation__link" href="../forms.softwareatumedida">
+                        <a id="subMenuMedico" class="mdl-navigation__link" href="#">
                             <i class="material-icons" role="presentation">person</i>
-                            Cuenta
+                            Medico
                         </a>
                         <a class="mdl-navigation__link" href="maps.xhtml">
                             <i class="material-icons" role="presentation">map</i>
-                            Mapa
+                            Agendar cita
                         </a>
                         <a class="mdl-navigation__link" href="ui.xhtml">
                             <i class="material-icons">view_comfy</i>
-                            Elementos de interfaz
+                            Crear expediente
                         </a>
 
-                        <div class="mdl-layout-spacer"></div>
-                        <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
-                            <i class="material-icons" role="presentation">link</i>
-                            GitHub
-                        </a>
+                        <div class="mdl-layout-spacer"></div>                        
+                        <div class="mdl-grid">
+                            <ul class="social-network social-circle">
+                                <!--li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li-->
+                                <li><a href="https://www.facebook.com/hmhm1985" target="blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <!--li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li-->
+                                <li><a href="https://plus.google.com/+HilarioMartinHerrera" target="blank" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UC5ZvslKTguUF7_ECfqKyW1g?disable_polymer=true" target="blank" class="icoLinkedin" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
             </ui:insert>

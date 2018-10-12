@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"        
+
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Imposible acceder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="icon" type="image/png" href="http://id-dividsoft.rhcloud.com/javax.faces.resource/id.png.xhtml?ln=img" />
+
+        <meta name="msapplication-TileColor" content="#3372DF" />
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Material Design Lite" />
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
+              type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <h:outputStylesheet library="css" name="lib/getmdl-select.min.css" />
+        <h:outputStylesheet library="css" name="lib/nv.d3.css" />
+        <h:outputStylesheet library="css" name="application.css" />
+
+        <style>
+            .demo-card-square.mdl-card {
+                width: 320px;
+                height: 320px;
+            }
+            .demo-card-square > .mdl-card__title {
+                color: #fff;
+                background:
+                    url('resources/images/accesodenegado.svg') bottom right 15% no-repeat #46B6AC;
+            }
+        </style>
+    </h:head>
+    <h:body class="mdl-color--grey-100">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
+            <header  class="mdl-layout__header">                
+            </header>
+            
+            <div class="mdl-layout__drawer">
+                <header>Soft@Medida</header>
+            </div>            
+            <main class="mdl-layout__content">
+                <div class="center_content mdl-grid">
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="demo-card-square mdl-card mdl-shadow--8dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">Error</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            No has iniciado sesion, favor de dar clic en el enlace de abajo para ingresar sus datos de acceso.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="./../../clinicav1/">
+                                Iniciar sesion
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mdl-layout-spacer"></div>
+                </div>
+            </main>
+        </div>
+        <!-- inject:js -->
+        <h:outputScript library="js" name="d3.js" />
+        <h:outputScript library="js" name="getmdl-select.min.js" />
+        <h:outputScript library="js" name="material.js" />
+        <h:outputScript library="js" name="nv.d3.js" />
+        <h:outputScript library="js" name="widgets/employer-form/employer-form.js" />
+        <h:outputScript library="js" name="widgets/line-chart/line-chart-nvd3.js" />
+        <h:outputScript library="js" name="widgets/map/maps.js" />
+        <h:outputScript library="js" name="widgets/pie-chart/pie-chart-nvd3.js" />
+        <h:outputScript library="js" name="widgets/table/table.js" />
+        <h:outputScript library="js" name="widgets/todo/todo.js" />
+    </h:body>
+</html>
