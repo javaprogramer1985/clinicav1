@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      >
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Bienvenido</title>
+
+        <link rel="icon" type="image/png" href="http://id-dividsoft.rhcloud.com/javax.faces.resource/id.png.xhtml?ln=img" />
+
+        <meta name="msapplication-TileColor" content="#3372DF" />
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Material Design Lite" />
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
+              type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <h:outputStylesheet library="css" name="lib/getmdl-select.min.css" />
+        <h:outputStylesheet library="css" name="lib/nv.d3.css" />
+        <h:outputStylesheet library="css" name="application.css" />
+    </h:head>
+
+    <h:body class="mdl-color--blue-grey-50">
+        <h:form>
+            <p:remoteCommand name="logout" actionListener="#{indexController.cerrarSession()}" />
+        </h:form> 
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">            
+            <ui:insert name="top">
+                <header class="mdl-layout__header">
+                    <div class="mdl-layout__header-row">
+                        <div class="mdl-layout-spacer"></div>
+                        <!-- Search-->
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                                <i class="material-icons">search</i>
+                            </label>
+
+                            <div class="mdl-textfield__expandable-holder">
+                                <input class="mdl-textfield__input" type="text" id="search"/>
+                                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                            </div>
+                        </div>
+
+                        <div class="avatar-dropdown" id="icon">
+                            <span>Herrera</span>
+                            <img src="https://lh3.googleusercontent.com/-kiCkCsVNH9E/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbAfg84iuoDncDnV5Sw2oe0GLBHq8A/s96-c-mo/photo.jpg" class="responsive-img" />
+                        </div>
+                        <!-- Informacion de la cuenta menu desplegable-->
+                        <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
+                            for="icon">
+                            <li class="mdl-list__item mdl-list__item--two-line">
+                                <span class="mdl-list__item-primary-content">
+                                    <span class="material-icons mdl-list__item-avatar"></span>
+                                    <span>#{home.user.firstName}</span>
+                                    <span class="mdl-list__item-sub-title">#{home.user.email}</span>
+                                </span>
+                            </li>
+                            <li class="list__item--border-top"></li>
+                            <li class="mdl-menu__item mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">account_circle</i>
+                                    Mi Cuenta
+                                </span>
+                            </li>
+                            <li class="mdl-menu__item mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">check_box</i>
+                                    Mis pendientes
+                                </span>
+                                <span class="mdl-list__item-secondary-content">
+                                    <span class="label background-color--primary">3 new</span>
+                                </span>
+                            </li>
+                            <li class="mdl-menu__item mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">perm_contact_calendar</i>
+                                    Mis expedientes
+                                </span>                            
+                            </li>
+                            <li class="list__item--border-top"></li>
+                            <li class="mdl-menu__item mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon">settings</i>
+                                    Configuraciòn
+                                </span>
+                            </li>
+                            <li class="mdl-menu__item mdl-list__item" onclick="logout();">
+                                <span class="mdl-list__item-primary-content">
+                                    <i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i>
+                                    Salir
+                                </span>
+                            </li>
+                        </ul>
+
+                    </div>                
+                </header>
+            </ui:insert>
+            <ui:insert name="left">
+                <div class="mdl-layout__drawer">
+                    <header>Soft@Medida</header>
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
+                            <i class="material-icons" role="presentation">dashboard</i>
+                            Principal
+                        </a>
+                        <a class="mdl-navigation__link" href="../forms.softwareatumedida">
+                            <i class="material-icons" role="presentation">person</i>
+                            Cuenta
+                        </a>
+                        <a class="mdl-navigation__link" href="maps.xhtml">
+                            <i class="material-icons" role="presentation">map</i>
+                            Mapa
+                        </a>
+                        <a class="mdl-navigation__link" href="ui.xhtml">
+                            <i class="material-icons">view_comfy</i>
+                            Elementos de interfaz
+                        </a>
+
+                        <div class="mdl-layout-spacer"></div>
+                        <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
+                            <i class="material-icons" role="presentation">link</i>
+                            GitHub
+                        </a>
+                    </nav>
+                </div>
+            </ui:insert>
+            <ui:insert name="content">
+                CONTENT
+            </ui:insert>
+        </div>
+        <!-- inject:js -->
+        <h:outputScript library="js" name="d3.js" />
+        <h:outputScript library="js" name="getmdl-select.min.js" />
+        <h:outputScript library="js" name="material.js" />
+        <h:outputScript library="js" name="nv.d3.js" />
+        <h:outputScript library="js" name="widgets/employer-form/employer-form.js" />
+        <h:outputScript library="js" name="widgets/line-chart/line-chart-nvd3.js" />
+        <h:outputScript library="js" name="widgets/map/maps.js" />
+        <h:outputScript library="js" name="widgets/pie-chart/pie-chart-nvd3.js" />
+        <h:outputScript library="js" name="widgets/table/table.js" />
+        <h:outputScript library="js" name="widgets/todo/todo.js" />
+
+
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    </h:body>
+
+</html>

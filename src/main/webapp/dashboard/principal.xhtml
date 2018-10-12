@@ -38,7 +38,7 @@ and open the template in the editor.
     </h:head>
     <h:body class="mdl-color--grey-100">
         <h:form>
-            <pe:remoteCommand name="logout" actionListener="#{login.logout}" />
+            <p:remoteCommand name="logout" actionListener="#{indexController.cerrarSession()}" />
         </h:form> 
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
             <header class="mdl-layout__header">
@@ -114,19 +114,19 @@ and open the template in the editor.
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
                         <i class="material-icons" role="presentation">dashboard</i>
-                        Dashboard
+                        Principal
                     </a>
-                    <a class="mdl-navigation__link" href="forms.xhtml">
+                    <a class="mdl-navigation__link" href="../forms.softwareatumedida">
                         <i class="material-icons" role="presentation">person</i>
-                        Account
+                        Cuenta
                     </a>
                     <a class="mdl-navigation__link" href="maps.xhtml">
                         <i class="material-icons" role="presentation">map</i>
-                        Maps
+                        Mapa
                     </a>
                     <a class="mdl-navigation__link" href="ui.xhtml">
                         <i class="material-icons">view_comfy</i>
-                        UI Elements
+                        Elementos de interfaz
                     </a>
 
                     <div class="mdl-layout-spacer"></div>

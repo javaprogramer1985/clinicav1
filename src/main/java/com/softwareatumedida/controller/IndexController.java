@@ -3,7 +3,10 @@ package com.softwareatumedida.controller;
 import com.softwareatumedida.ejb.UsuariosFacadeLocal;
 import com.softwareatumedida.model.Usuarios;
 import com.softwareatumedida.util.Codificador;
+import java.io.IOException;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -47,7 +50,7 @@ public class IndexController implements Serializable{
                 
                 //Almacenar session de JSF
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("SessionUsuario", us);                
-                redireccion="/dashboard/principal?faces-redirect=true";
+                redireccion="/dashboard/indexPrincipal?faces-redirect=true";
             
             }else{
                 //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"El Nombre de usuario o contraseña son incorrectos", ""));
@@ -77,5 +80,14 @@ public class IndexController implements Serializable{
     
     private void message(FacesMessage.Severity SEVERITY, String message) {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(SEVERITY, message, message));
+    }
+    
+    public void cerrarSession() {
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("./../../clinicav1/");
+        } catch (IOException ex) {
+            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
