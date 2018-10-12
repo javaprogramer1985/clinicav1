@@ -11237,8 +11237,8 @@ main {
   .mdl-layout__header-row .message, .mdl-layout__header-row .notification {
     display: none; } }
 
-.mdl-card__title {
-  background-color: rgb(0, 188, 212); }
+.mdl-card__title {  
+    background-color: #3d838c;}
 
 .mdl-card__supporting-text {
   width: calc(100% - 32px); }
