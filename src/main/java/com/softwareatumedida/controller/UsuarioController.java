@@ -1,5 +1,6 @@
 package com.softwareatumedida.controller;
 
+import com.google.gson.Gson;
 import com.softwareatumedida.ejb.UsuariosFacadeLocal;
 import com.softwareatumedida.model.Usuarios;
 import com.softwareatumedida.util.Codificador;
@@ -30,6 +31,8 @@ public class UsuarioController implements Serializable{
     private boolean btnModificar;
     private boolean btnNuevo;
     
+    private Gson gson = new Gson();
+    
     Codificador cod;
     
     @PostConstruct
@@ -40,6 +43,7 @@ public class UsuarioController implements Serializable{
         entityUsuario.setUsuarioUsr(usuario.getUsuarioUsr());
         //usuario = new Usuarios();
         usuarios = usuariosEJB.findAll();
+        
         cod = new Codificador();
     }
 
