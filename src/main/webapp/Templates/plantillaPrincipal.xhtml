@@ -118,34 +118,8 @@
             <ui:insert name="left">
                 <div class="mdl-layout__drawer">
                     <header>Soft@Medida</header>
-                    <nav class="mdl-navigation">
-                        <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
-                            <i class="material-icons" role="presentation">dashboard</i>
-                            Principal
-                        </a>
-                        <a id="subMenuMedico" class="mdl-navigation__link" href="#">
-                            <i class="material-icons" role="presentation">person</i>
-                            Medico
-                        </a>
-                        <a class="mdl-navigation__link" href="maps.xhtml">
-                            <i class="material-icons" role="presentation">map</i>
-                            Agendar cita
-                        </a>
-                        <a class="mdl-navigation__link" href="ui.xhtml">
-                            <i class="material-icons">view_comfy</i>
-                            Crear expediente
-                        </a>
-
-                        <div class="mdl-layout-spacer"></div>                        
-                        <div class="mdl-grid">
-                            <ul class="social-network social-circle">
-                                <!--li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li-->
-                                <li><a href="https://www.facebook.com/hmhm1985" target="blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                <!--li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li-->
-                                <li><a href="https://plus.google.com/+HilarioMartinHerrera" target="blank" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="https://www.youtube.com/channel/UC5ZvslKTguUF7_ECfqKyW1g?disable_polymer=true" target="blank" class="icoLinkedin" title="YouTube"><i class="fa fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
+                    <nav id="menubar" class="mdl-navigation">
+                        
                     </nav>
                 </div>
             </ui:insert>
@@ -154,6 +128,7 @@
             </ui:insert>
         </div>
         <!-- inject:js -->
+        <h:outputScript library="js" name="MenuBar.js" />
         <h:outputScript library="js" name="d3.js" />
         <h:outputScript library="js" name="getmdl-select.min.js" />
         <h:outputScript library="js" name="material.js" />
