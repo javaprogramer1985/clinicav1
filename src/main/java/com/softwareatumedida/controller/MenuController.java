@@ -24,7 +24,7 @@ import org.primefaces.model.menu.DefaultSubMenu;
 import org.primefaces.model.menu.MenuModel;
 
 @Named
-@SessionScoped
+@RequestScoped
 @Data
 public class MenuController implements Serializable {
 

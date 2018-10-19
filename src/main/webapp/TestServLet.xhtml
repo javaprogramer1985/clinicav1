@@ -12,9 +12,9 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
-    <h:body onload="htmlMenu()" >  
+    <h:body onload="#{menuController.mostrar()}" >  
 
-        #{menuController.textJson}
+        <div id="json" ><p:inputText value="#{menuController.textJson}"></p:inputText></div>
         
     </h:body>
 </html>
