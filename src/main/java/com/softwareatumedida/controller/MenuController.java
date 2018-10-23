@@ -15,6 +15,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.RequestScoped;
+import javax.faces.view.ViewScoped;
 
 import javax.inject.Named;
 import lombok.Data;
@@ -24,7 +25,7 @@ import org.primefaces.model.menu.DefaultSubMenu;
 import org.primefaces.model.menu.MenuModel;
 
 @Named
-@RequestScoped
+@ViewScoped
 @Data
 public class MenuController implements Serializable {
 

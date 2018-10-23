@@ -13,8 +13,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.primefaces.context.RequestContext;
 
 @Named
@@ -50,7 +48,7 @@ public class IndexController implements Serializable{
                 
                 //Almacenar session de JSF
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("SessionUsuario", us);                
-                redireccion="/dashboard/indexPrincipal?faces-redirect=true";
+                redireccion="/dashboard/principal?faces-redirect=true";
             
             }else{
                 //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"El Nombre de usuario o contraseña son incorrectos", ""));
