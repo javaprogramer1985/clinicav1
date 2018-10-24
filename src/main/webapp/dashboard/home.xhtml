@@ -5,12 +5,69 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      >
+    <h:head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>PROCESOS MAS USADOS</div>
-    </body>
+        <title>Inicio</title>
+
+        <link rel="icon" type="image/png" href="http://id-dividsoft.rhcloud.com/javax.faces.resource/id.png.xhtml?ln=img" />
+
+        <meta name="msapplication-TileColor" content="#3372DF" />
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Material Design Lite" />
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
+              type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <!-- Font Awesome CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+        <h:outputStylesheet library="css" name="lib/getmdl-select.min.css" />
+        <h:outputStylesheet library="css" name="lib/nv.d3.css" />
+        <h:outputStylesheet library="css" name="application.css" />
+    </h:head>
+    <h:body class="mdl-color--blue-grey-50">
+        <div class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+            <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Bienvenio</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Hola 
+                </div>
+                <div class="mdl-"
+            </div>
+        </div>
+
+        <!-- inject:js -->
+        <h:outputScript library="js" name="jquery-3.3.1.min.js"/>
+        <h:outputScript library="js" name="UpdateItems.js" />
+        <h:outputScript library="js" name="MenuBar.js" />        
+        <h:outputScript library="js" name="d3.js" />
+        <h:outputScript library="js" name="getmdl-select.min.js" />
+        <h:outputScript library="js" name="material.js" />
+        <h:outputScript library="js" name="nv.d3.js" />
+        <h:outputScript library="js" name="widgets/employer-form/employer-form.js" />
+        <h:outputScript library="js" name="widgets/line-chart/line-chart-nvd3.js" />
+        <!--h:outputScript library="js" name="widgets/map/maps.js" /-->
+        <h:outputScript library="js" name="widgets/pie-chart/pie-chart-nvd3.js" />
+        <h:outputScript library="js" name="widgets/table/table.js" />
+        <h:outputScript library="js" name="widgets/todo/todo.js" />
+        <h:outputScript library="js" name="widgets/todo/todo.js" />
+    </h:body>
 </html>

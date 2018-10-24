@@ -1,16 +1,18 @@
+var obj;
 $(document).ready(
         function () {
 
             $('#contenido').load("home.softwareatumedida");
+            
             var datamenu = document.getElementById("data").innerHTML;
             var menuHtml = '';
             var i;
 
             var text = '{ "menus" : ' + datamenu + '}';
 
-            var obj = JSON.parse(text);
+            obj = JSON.parse(text);
             for (i = 0; i < obj.menus.length; i++) {
-                menuHtml = menuHtml + '<a id="' + obj.menus[i].menuCodigo + '"class="mdl-navigation__link ' + obj.menus[i].menuSeleccionado + '"  href="#" onclick=callSourceItem(' + obj.menus[i].menuCodigo + ')>' +
+                menuHtml = menuHtml + '<a id="' + obj.menus[i].menuCodigo + '"class="mdl-navigation__link ' + obj.menus[i].menuSeleccionado + '"  href="#" onclick=callSourceItem(' + i + ')>' +               
                         '<i class="material-icons" role="presentation">' + obj.menus[i].menuIcon + '</i>' +
                         obj.menus[i].menuNombre + '</a>';
             }
@@ -39,19 +41,7 @@ $(document).ready(
         });
 
 function callSourceItem(itemId)
-{
-    if (itemId === 1) {
-        $('#contenido').load("home.softwareatumedida");
-    }
-    if (itemId === 2) {
-        $('#contenido').load("medico.softwareatumedida");
-    }
-    if (itemId === 3) {
-        $('#contenido').load("cita.softwareatumedida");
-    }
-    if (itemId === 4) {
-        $('#contenido').load("expediente.softwareatumedida");
-    }
-    return "";
+{      
+    $('#contenido').load(obj.menus[itemId].menuUrl);
 }
 

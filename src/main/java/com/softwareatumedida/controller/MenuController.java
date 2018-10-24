@@ -10,18 +10,13 @@ import com.softwareatumedida.ejb.MenuFacadeLocal;
 import com.softwareatumedida.model.Menu;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.RequestScoped;
 import javax.faces.view.ViewScoped;
 
 import javax.inject.Named;
 import lombok.Data;
-import org.primefaces.model.menu.DefaultMenuItem;
 import org.primefaces.model.menu.DefaultMenuModel;
-import org.primefaces.model.menu.DefaultSubMenu;
 import org.primefaces.model.menu.MenuModel;
 
 @Named
