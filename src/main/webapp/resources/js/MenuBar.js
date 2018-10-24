@@ -13,7 +13,7 @@ $(document).ready(
             obj = JSON.parse(text);
             for (i = 0; i < obj.menus.length; i++) {
                 menuHtml = menuHtml + '<a id="' + obj.menus[i].menuCodigo + '"class="mdl-navigation__link ' + obj.menus[i].menuSeleccionado + '"  href="#" onclick=callSourceItem(' + i + ')>' +               
-                        '<i class="material-icons" role="presentation">' + obj.menus[i].menuIcon + '</i>' +
+                        '<i class="'+obj.menus[i].menuIcon+'" role="presentation"></i>' +
                         obj.menus[i].menuNombre + '</a>';
             }
 
