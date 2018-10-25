@@ -12,40 +12,24 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.view.ViewScoped;
 
 import javax.inject.Named;
-import lombok.Data;
-import org.primefaces.model.menu.DefaultMenuModel;
-import org.primefaces.model.menu.MenuModel;
 
 @Named
-@ViewScoped
-@Data
-public class MenuController implements Serializable {
+@ViewScoped//Quizas  se hagan actualizaciones usando Ajax y no de tipo Request
+public class OpcionMenuController implements Serializable {
 
     @EJB
     private MenuFacadeLocal menufacadeEJB;
     private List<Menu> lista;
-    private MenuModel model;
-    private String textJson;
     private Menu menu;
     private Gson json;
 
     @PostConstruct
     public void init() {
-        json = new Gson();
         lista = this.listar();
-        model = new DefaultMenuModel();
-        textJson = json.toJson(lista); 
         menu = new Menu();
-        //this.establecerPermisos();
-        
-    }
-
-    public void mostrar(){
-        System.out.println("---> " + textJson);
     }
     
     public List<Menu> listar() {
@@ -56,6 +40,8 @@ public class MenuController implements Serializable {
         menu.setMenuCodigo(Short.MAX_VALUE);
         menufacadeEJB.create(menu);
     }
+    
+    
 //    public void establecerPermisos() {
 //        for (Menu m : lista) {
 //            if (m.getMenuTipo().equals("S")) {
@@ -83,5 +69,13 @@ public class MenuController implements Serializable {
 //            }
 //        }
 //    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
 
 }

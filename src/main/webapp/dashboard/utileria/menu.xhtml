@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:remoteCommand name="guardar" actionListener="#{opcionMenuController.guardar()}" /> 
+        </h:form>
+        <main class="mdl-layout__content mdl-color--grey-100 ">
+            <div class="mdl-card mdl-shadow--2dp employer-form" action="#">                
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Agregar opciones de menu</h2>
+                    <div class="mdl-card__subtitle">Opcion de super administrador</div>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <h:form styleClass="form">
+                        <div class="form__article">
+                            <h3>Datos generales</h3>
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label">                                        
+                                     <h:inputText value="#{opcionMenuController.menu.menuNombre}" required="true" requiredMessage="Ingrese el nombre del menu porfavor" styleClass="mdl-textfield__input" id="menuNombre" />
+                                     <h:outputLabel for="menuNombre" styleClass="mdl-textfield__label" value="Nombre"/>
+                                </div>
+
+                                <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label">                                    
+                                    <h:inputText value="#{opcionMenuController.menu.menuIcon}" required="true" requiredMessage="Ingrese el nombre del icono porfavor" styleClass="mdl-textfield__input" id="menuIcon"/>
+                                    <h:outputLabel for="menuIcon" styleClass="mdl-textfield__label" value="Icono"/>                                    
+                                </div>
+
+                                <div class="mdl-cell mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <h:inputText value="#{opcionMenuController.menu.menuUrl}" required="true" requiredMessage="Ingrese la url de accion del item" styleClass="mdl-textfield__input" id="menuUrl"/>
+                                    <h:outputLabel for="menuUrl" styleClass="mdl-textfield__label" value="Url"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__article"> 
+                            <h3>Datos especificos</h3>
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="chekbox1">
+                                <h:outputLabel for="chekbox1" styleClass="mdl-checkbox__label" value="Activar"/>
+                                <h:selectBooleanCheckbox id="chekbox1" label="Activar" rendered="false" styleClass="mdl-checkbox__input" value="#{opcionMenuController.menu.menuEstado}"/>                                
+                            </label>
+                            
+                        </div>
+                        <div class="form__action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="isInfoReliable">
+                                <input type="checkbox" id="isInfoReliable" class="mdl-checkbox__input" required="true"/>
+                                <span class="mdl-checkbox__label">La informacion introducida es correcta</span>
+                            </label>
+                            
+                            <h:commandLink action="#{opcionMenuController.guardar()}" id="submit_button" styleClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored mdl-color--primary" value="Enviar Datos"  />
+                        </div>
+                    </h:form>                        
+                </div>
+            </div>                 
+        </main>
+    </h:body>
+</html>

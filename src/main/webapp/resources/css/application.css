@@ -7488,7 +7488,7 @@ input.mdl-button[type="submit"] {
         .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
           padding: 16px 8px; } }
       .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-        background-color: rgba(0, 0, 0, 0.25); }
+        background-color: rgba(224, 224, 224, 0.1); }
       .mdl-layout__drawer .mdl-navigation .mdl-navigation__link--current {
         background-color: rgba(0, 0, 0, 0.25);
         color: rgb(0, 188, 212); }
