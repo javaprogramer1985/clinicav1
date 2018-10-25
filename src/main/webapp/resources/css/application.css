@@ -1351,7 +1351,8 @@ ul, ol {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 30px;
+  color: #ffffff;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -7444,7 +7445,7 @@ input.mdl-button[type="submit"] {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   border-right: 1px solid rgb(224,224,224);
-  background: rgb(36, 36, 36);
+  background: #212121;
   transform: translateX(-246px);
   transform-style: preserve-3d;
   will-change: transform;
@@ -7479,7 +7480,10 @@ input.mdl-button[type="submit"] {
       flex-shrink: 0;
       padding: 16px 20px;
       margin: 0;
-      color: #757575; }
+      color: #BDBDBD; }
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link .mdl-menuitem-text {
+        font-weight: 700;
+       }
       @media screen and (max-width: 1440px) {
         .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
           padding: 16px 8px; } }
@@ -7543,7 +7547,7 @@ input.mdl-button[type="submit"] {
   min-height: 64px; 
   max-height: 1000px;
   z-index: 3;
-  background-color: #242424;
+  background-color: #2196F3;
   color: rgb(0, 188, 212);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   transition-duration: 0.2s;
@@ -11131,7 +11135,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       margin-left: 91.66667%; } }
 
 .mdl-layout {
-  background: rgb(0, 188, 212); }
+  background: rgb(255, 255, 255); }
 
 main {
   /*background: url("#{resource['images:Dark_background_1920x1080.png']}") center top no-repeat;*/
@@ -11150,7 +11154,7 @@ main {
     color: rgb(255, 255, 255);
     height: 64px;
     line-height: 64px;
-    background: rgba(0, 0, 0,0.85);
+    background: #42A5F5;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 1px; }
@@ -11195,7 +11199,7 @@ main {
       width: 32px;
       height: 32px; }
     .mdl-layout__header-row .avatar-dropdown > span {
-      color: rgba(255, 255, 255, 0.5);
+      color: #ffffff;
       padding-right: 16px; }
   .mdl-layout__header-row .mdl-textfield {
     padding: 23px 0; }

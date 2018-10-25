@@ -18,8 +18,9 @@ $(document).ready(
                     obj = JSON.parse(text);
                     for (i = 0; i < obj.menus.length; i++) {
                         menuHtml = menuHtml + '<a id="' + obj.menus[i].menuCodigo + '"class="mdl-navigation__link ' + obj.menus[i].menuSeleccionado + '"  href="#" onclick=callSourceItem(' + i + ')>' +
-                                '<i class="' + obj.menus[i].menuIcon + '" role="presentation" style="margin-left:10px; margin-right:20px"></i>' +
-                                obj.menus[i].menuNombre + '</a>';
+                                '<i class="' + obj.menus[i].menuIcon + '" role="presentation" style="margin-left:10px; margin-right:5px"></i>' +
+                                 '<span class="mdl-menuitem-text">'+ obj.menus[i].menuNombre +'</span>'
+                                 + '</a>';
                     }
 
                     menuHtml = menuHtml + '<div class="mdl-layout-spacer"></div>' +
