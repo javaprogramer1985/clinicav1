@@ -24,23 +24,23 @@ and open the template in the editor.
                     <div class="mdl-card__subtitle">Opcion de super administrador</div>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    <form  action="#" class="form">
+                    <h:form styleClass="form">
                         <div class="form__article">
                             <h3>Datos generales</h3>
                             <div class="mdl-grid">
-                                <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label">                                                                                                                
-                                    <input type="text" id="menuNombre" class="mdl-textfield__input" required="true"/>
-                                    <label for="menuNombre" class="mdl-textfield__label">Nombre</label>
+                                <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label">                                        
+                                    <h:inputText value="#{opcionMenuController.menu.menuNombre}" required="true" requiredMessage="Ingrese el nombre del menu porfavor" styleClass="mdl-textfield__input" id="menuNombre" />
+                                    <h:outputLabel for="menuNombre" styleClass="mdl-textfield__label" value="Nombre"/>
                                 </div>
 
                                 <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label">                                    
-                                    <input type="text" id="menuIcon" class="mdl-textfield__input" required="true"/>
-                                    <label for="menuIcon" class="mdl-textfield__label">Icono</label>
+                                    <h:inputText value="#{opcionMenuController.menu.menuIcon}" required="true" requiredMessage="Ingrese el nombre del icono porfavor" styleClass="mdl-textfield__input" id="menuIcon"/>
+                                    <h:outputLabel for="menuIcon" styleClass="mdl-textfield__label" value="Icono"/>                                    
                                 </div>
 
                                 <div class="mdl-cell mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input type="text" id="menuUrl" class="mdl-textfield__input" required="true"/>
-                                    <label for="menuUrl" class="mdl-textfield__label">Url</label>
+                                    <h:inputText value="#{opcionMenuController.menu.menuUrl}" required="true" requiredMessage="Ingrese la url de accion del item" styleClass="mdl-textfield__input" id="menuUrl"/>
+                                    <h:outputLabel for="menuUrl" styleClass="mdl-textfield__label" value="Url"/>
                                 </div>
                             </div>
                         </div>
@@ -58,15 +58,12 @@ and open the template in the editor.
                                 <input type="checkbox" id="isInfoReliable" class="mdl-checkbox__input" required="true"/>
                                 <span class="mdl-checkbox__label">La informacion introducida es correcta</span>
                             </label>
-                            <button  type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                                Enviar
-                            </button>                                                        
+
+                            <h:commandLink action="#{opcionMenuController.guardar()}" id="submit_button" styleClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored mdl-color--primary" value="Enviar Datos"  />
                         </div>
-                    </form>                     
-                    <div id="respuesta" style="color: #000000;"></div>
+                    </h:form>                        
                 </div>
             </div>                 
         </main>
-        <h:outputScript library="js" name="app/menujs.js" />
     </h:body>
 </html>
